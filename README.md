@@ -1,6 +1,6 @@
 # passport-andyet
 
-This is a passport strategy for andyet's internal auth
+This is a passport strategy for andyet's auth
 
 ## Install
 
