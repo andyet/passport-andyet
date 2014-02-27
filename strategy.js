@@ -46,6 +46,8 @@ Strategy.prototype.authenticate = function (req, options) {
             }
         }, function (err, res, body) {
             if (res && res.statusCode === 200) {
+                req.session.access_token = body.access_token;
+                req.session.refresh_token = body.refresh_token;
                 self._loadUserProfile(body.access_token, function (profile) {
                     self._verify(body.access_token, body.refresh_token, profile, function (err, user, info) {
                         if (err) return self.error(err);
